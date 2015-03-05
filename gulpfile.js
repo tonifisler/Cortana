@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     notify = require('gulp-notify'),
     jshint = require('gulp-jshint'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     browserSync = require('browser-sync'),
@@ -26,7 +26,6 @@ gulp.task('styles', function() {
 // CSS vendors concat and minify
 gulp.task('css_vendors', function() {
   gulp.src([
-      'vendors/Slidebars/distribution/0.9.4/slidebars.css',
       'vendors/angular-motion/dist/angular-motion.css'
     ])
     .pipe(concat('vendors.css'))
@@ -50,7 +49,6 @@ gulp.task('scripts', function() {
 gulp.task('js_vendors', function() {
   gulp.src([
       'vendors/jquery/jquery.js',
-      'vendors/Slidebars/distribution/0.9.4/slidebars.min.js',
       'vendors/angular/angular.js',
       'vendors/angular-animate/angular-animate.js',
       'vendors/angular-strap/dist/angular-strap.min.js',
@@ -63,14 +61,7 @@ gulp.task('js_vendors', function() {
     .pipe(gulp.dest('theme-build/js'));
 });
 
-gulp.task('browser-sync', function() {
-    browserSync.init(['theme-build/css/*.css', '*.html', 'theme-build/js/*.js'], {
-      proxy: 'localhost',
-      open: false
-    });
-});
-
-gulp.task('default', ['watch', 'js_vendors', 'css_vendors', 'styles', 'scripts', 'browser-sync']);
+gulp.task('default', ['watch', 'js_vendors', 'css_vendors', 'styles', 'scripts']);
 
 gulp.task('watch', function() {
   gulp.watch('assets/sass/*.scss', ['styles']);

@@ -12,7 +12,7 @@ class Cortanamarkdownrenderer < Redcarpet::Render::HTML
         '</div><div class="container-fluid"><div class="col-sm-12">' + render_html(code, language) + '</div></div><div class="cortana-content">'
       else
         lexer = Rouge::Lexer.find(get_lexer(language))
-        '</div><div class="codeExample">' + '<div class="exampleOutput">' + render_html(code, language) + '</div>' + '<div class="codeBlock"><div class="highlight"><pre>' + formatter.format(lexer.lex(code)) + '</pre></div></div>' + '</div><div class="cortana-content">'
+        '</div><div class="codeExample">' + '<div class="exampleOutput clearfix">' + render_html(code, language) + '</div>' + '<div class="codeBlock"><div class="highlight"><pre>' + formatter.format(lexer.lex(code)) + '</pre></div></div>' + '</div><div class="cortana-content">'
       end
     else
       lexer = Rouge::Lexer.find_fancy('guess', code)
