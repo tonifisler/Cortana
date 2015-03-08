@@ -7,7 +7,7 @@
       $markup = $('.codeBlock');
 
     codeIndex += 1;
-    $(this).find($output).append('<button type="button" class="btn btn-xs btn-info show-code" data-toggle="collapse" data-target="#codeBlock-' + codeIndex + '">&lt;/&gt;</button>');
+    $(this).find($output).append('<p class="styleguide show-code"><button type="button" class="btn btn-xs btn-info" data-toggle="collapse" data-target="#codeBlock-' + codeIndex + '">&lt;/&gt;</button></p>');
     $(this).find($markup).addClass('collapse').attr('id', 'codeBlock-' + codeIndex);
   });
 

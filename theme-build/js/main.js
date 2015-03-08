@@ -1,20 +1,3 @@
-/* ==========================================================
- * app.js
- * Angular app
- *
- * Author: Yann Gouffon, hello@yago.io
- *
- * Copyright 2014 Yann Gouffon
- * Licensed under MIT
- ========================================================== */
-
-(function(){
-  var app = angular.module('cortana', ['mgcrea.ngStrap', 'ui.bootstrap']);
-
-  app.controller('MainController', function($scope) {
-  });
-
-})();
 (function($) {
 
   var codeIndex = 0;
@@ -24,7 +7,7 @@
       $markup = $('.codeBlock');
 
     codeIndex += 1;
-    $(this).find($output).append('<button type="button" class="btn btn-xs btn-info show-code" data-toggle="collapse" data-target="#codeBlock-' + codeIndex + '">&lt;/&gt;</button>');
+    $(this).find($output).append('<p class="styleguide show-code"><button type="button" class="btn btn-xs btn-info" data-toggle="collapse" data-target="#codeBlock-' + codeIndex + '">&lt;/&gt;</button></p>');
     $(this).find($markup).addClass('collapse').attr('id', 'codeBlock-' + codeIndex);
   });
 

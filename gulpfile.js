@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 // SASS compile, autoprefix and minify task
 gulp.task('styles', function() {
-  return gulp.src('assets/sass/cortana.scss')
+  return gulp.src('assets/sass/main.scss')
     .pipe(sass())
     .on('error', gutil.beep)
     .on('error', notify.onError("Error: <%= error.message %>"))
@@ -26,7 +26,6 @@ gulp.task('styles', function() {
 // CSS vendors concat and minify
 gulp.task('css_vendors', function() {
   gulp.src([
-      'vendors/angular-motion/dist/angular-motion.css'
     ])
     .pipe(concat('vendors.css'))
     .pipe(minifycss())
@@ -48,13 +47,7 @@ gulp.task('scripts', function() {
 // JS vendors concat and minify
 gulp.task('js_vendors', function() {
   gulp.src([
-      'vendors/jquery/jquery.js',
-      'vendors/angular/angular.js',
-      'vendors/angular-animate/angular-animate.js',
-      'vendors/angular-strap/dist/angular-strap.min.js',
-      'vendors/angular-strap/dist/angular-strap.tpl.min.js',
-      'vendors/angular-bootstrap/ui-bootstrap.js',
-      'vendors/angular-bootstrap/ui-bootstrap-tpls.js'
+      'vendors/jquery/jquery.js'
     ])
     .pipe(concat('vendors.min.js'))
     .pipe(uglify())
