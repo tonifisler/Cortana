@@ -32,23 +32,23 @@
 
   <body data-spy="scroll" data-target=".subnav">
 
-    <header class="header">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+    <header class="styleguide header">
+      <nav class="styleguide navbar navbar-default navbar-fixed-top">
+        <div class="styleguide container">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+          <div class="styleguide navbar-header">
+            <button type="button" class="styleguide navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="styleguide sr-only">Toggle navigation</span>
+              <span class="styleguide icon-bar"></span>
+              <span class="styleguide icon-bar"></span>
+              <span class="styleguide icon-bar"></span>
             </button>
-            <span class="navbar-brand"><a href="index.html"><%= @config['styleguide_name'] %></a></span>
+            <span class="styleguide navbar-brand"><a href="index.html"><%= @config['styleguide_name'] %></a></span>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+          <div class="styleguide collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="styleguide nav navbar-nav">
 
               <% catWrappers = Array.new %>
                 <% @categories.each do |cat| %>
@@ -59,14 +59,14 @@
                 <% end %>
 
               <% catWrappers.each do |wrapper| %>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= wrapper %> <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
+                <li class="styleguide dropdown">
+                  <a href="#" class="styleguide dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= wrapper %> <span class="styleguide caret"></span></a>
+                  <ul class="styleguide dropdown-menu" role="menu">
                   <% @categories.each do |cat| %>
                     <% if cat[0].include?(wrapper) %>
                       <% catName = cat[0].split(nameScope).last %>
                       <% if catName == title.split(nameScope).last %>
-                        <li><a class="active" href="<%= cat[1] %>"><%= catName %></a></li>
+                        <li><a class="styleguide active" href="<%= cat[1] %>"><%= catName %></a></li>
                       <% else %>
                         <li><a href="<%= cat[1] %>"><%= catName %></a></li>
                       <% end %>
@@ -80,11 +80,11 @@
             </ul>
           </div><!-- /.navbar-collapse -->
 
-          <nav class="subnav">
-            <ul data-offset="-30" class="nav nav-pills">
+          <nav class="styleguide subnav">
+            <ul data-offset="-30" class="styleguide nav nav-pills">
               <% @blocks.each do |block| %>
                 <% if not block[:parent] %>
-                  <li role="presentation" class="text-xs"><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
+                  <li role="presentation" class="styleguide text-xs"><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
                 <% end %>
               <% end %>
             </ul>
@@ -96,7 +96,7 @@
 
     <div>
 
-      <div class="container">
+      <div class="styleguide container">
 
 
 
